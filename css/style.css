@@ -1,0 +1,261 @@
+/* 
+  Project: Personal Portfolio
+  Style: Neo-Brutalist / Jack Jaeschke Clone
+  Author: Ahmethan Satıcı
+*/
+
+/* 1. Variables & Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #080808;
+    --text-color: #f2f2f2;
+    --dim-color: #666;
+    --accent-color: #00ff41; /* Matrix Green for hover/scramble */
+    --border-color: #333;
+    
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* 2. Global Reset & Base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    margin: 0;
+    overflow-x: hidden;
+    line-height: 1.2;
+}
+
+a { text-decoration: none; color: inherit; cursor: pointer; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+/* 3. The Layout - Full Width Grid */
+/* Bu yapı tüm siteyi saran ana border sistemi */
+.site-wrapper {
+    width: 100%;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    /* Mobilde kenarlardan taşmasın */
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+    background: transparent; /* Video arkada görünsün diye */
+}
+
+/* Row (Satır) Yapısı */
+.row {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    background: rgba(8, 8, 8, 0.85); /* Hafif şeffaf siyah arka plan */
+    backdrop-filter: blur(5px); /* Bulanıklık efekti */
+}
+
+/* Hero Section Special Row - Daha şeffaf */
+.hero-row {
+    background: rgba(8, 8, 8, 0.4); /* Videonun daha net görünmesi için */
+    min-height: 80vh;
+}
+
+/* Column (Sütun) Yapısı */
+.col {
+    padding: 1.5rem;
+    border-right: 1px solid var(--border-color);
+}
+
+.col:last-child {
+    border-right: none;
+}
+
+/* Genişlik Yardımcıları */
+.w-25 { width: 25%; }
+.w-50 { width: 50%; }
+.w-75 { width: 75%; }
+.w-100 { width: 100%; }
+.flex-1 { flex: 1; }
+
+/* Mobile Responsive Layout Adjustments */
+@media (max-width: 768px) {
+    .row { flex-direction: column; }
+    .col { width: 100% !important; border-right: none; border-bottom: 1px solid var(--border-color); }
+    .col:last-child { border-bottom: none; }
+}
+
+/* 4. Typography - Massive & Raw */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 400;
+}
+
+.mega-title {
+    font-size: clamp(3rem, 12vw, 11rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+.section-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--dim-color);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* 5. Navigation */
+.nav-link {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* 6. Project List (The Core Feature) */
+.project-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+}
+
+.project-row:hover {
+    background-color: #111;
+}
+
+.project-row:last-child {
+    border-bottom: none;
+}
+
+.project-index {
+    font-family: var(--font-body);
+    color: var(--dim-color);
+    font-size: 0.9rem;
+    width: 50px;
+}
+
+.project-title {
+    font-size: 2.5rem;
+    font-family: var(--font-heading);
+    flex: 1;
+}
+
+.project-cat {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--dim-color);
+    text-transform: uppercase;
+}
+
+/* Scramble Effect Colors */
+.dud { color: var(--dim-color); opacity: 0.5; }
+
+/* Utilities */
+.text-right { text-align: right; }
+.mt-big { margin-top: 10vh; }
+.p-0 { padding: 0 !important; }
+
+/* Glitch/Hover Text */
+.glitch-text { cursor: pointer; }
+.glitch-text:hover { color: var(--accent-color); }
+
+/* Project Detail Specifics */
+.detail-hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 4rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--border-color);
+}
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-right: 1px solid var(--border-color);
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+.gallery-item:hover { filter: grayscale(0%); }
+
+/* VIDEO BACKGROUNDS */
+.bg-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Videonun parlaklığını artırdık */
+    filter: grayscale(100%) contrast(1.2); /* Siyah beyaz ve yüksek kontrast */
+}
+
+/* Hakkımda ve İletişim sayfasındaki form stilleri */
+.skill-list .project-row {
+    background: rgba(8, 8, 8, 0.9);
+}
+
+.raw-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    padding: 1rem 0;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.raw-input:focus {
+    border-color: var(--accent-color);
+}
+
+.raw-submit {
+    background: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 1.5rem 3rem;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.raw-submit:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}

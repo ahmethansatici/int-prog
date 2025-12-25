@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Ahmethan Satıcı</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Contact Specific Overrides */
+        .raw-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            padding: 1rem 0;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .raw-input:focus {
+            border-color: var(--accent-color);
+        }
+        
+        .raw-submit {
+            background: transparent;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            padding: 1.5rem 3rem;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            margin-top: 2rem;
+            width: 100%;
+        }
+        
+        .raw-submit:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- VIDEO BACKGROUND -->
+    <div class="bg-video-container">
+        <video class="bg-video" autoplay muted loop playsinline>
+            <source src="../assets/videos/Abstract_Glass_Cubes_Assembling_Video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="site-wrapper">
+        <!-- HEADER -->
+        <header class="row">
+            <div class="col w-50">
+                <!-- LOGO REMOVED -->
+            </div>
+            <div class="col w-50 text-right">
+                <nav>
+                    <ul>
+                        <li><a href="../index.html" class="nav-link glitch-text">ANA SAYFA</a></li>
+                        <li><a href="hakkimda.html" class="nav-link glitch-text">HAKKIMDA</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- HERO -->
+            <section class="row hero-row">
+                <div class="col w-100 detail-hero">
+                    <span class="section-label">LET'S TALK</span>
+                    <h1 class="mega-title" style="font-size: clamp(3rem, 10vw, 8rem);">İLETİŞİM</h1>
+                </div>
+            </section>
+
+            <!-- CONTACT GRID -->
+            <div class="row">
+                <!-- Contact Info Column -->
+                <div class="col w-50">
+                    <div style="margin-bottom: 4rem;">
+                        <span class="section-label">E-POSTA</span>
+                        <a href="mailto:iletisim@ahmethan.dev" class="project-title glitch-text" style="font-size: 2rem; display: block; margin-top: 1rem;">
+                            ahmethansatici@gmail.com
+                        </a>
+                    </div>
+                    
+                    <div>
+                        <span class="section-label">KONUM</span>
+                        <h3 class="project-title" style="font-size: 2rem; margin-top: 1rem;">ANKARA, TR</h3>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="col w-50">
+                    <form onsubmit="event.preventDefault(); alert('Mesajınız simüle edilmiştir.');">
+                        <div style="margin-bottom: 2rem;">
+                            <label class="section-label">ADINIZ</label>
+                            <input type="text" class="raw-input" placeholder="İSİM SOYİSİM" required>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <label class="section-label">E-POSTA</label>
+                            <input type="email" class="raw-input" placeholder="EMAIL ADRESİ" required>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <label class="section-label">MESAJINIZ</label>
+                            <input type="text" class="raw-input" placeholder="PROJE DETAYLARI..." required>
+                        </div>
+                        
+                        <button type="submit" class="raw-submit">GÖNDER</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        
+        <!-- FOOTER -->
+        <footer class="row">
+            <div class="col w-50">
+                <p class="section-label">TELİF HAKKI © 2025</p>
+            </div>
+            <div class="col w-50 text-right">
+                <p class="section-label">AHMETHAN.DEV</p>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="../js/main.js"></script>
+</body>
+</html>
