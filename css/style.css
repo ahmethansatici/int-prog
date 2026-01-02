@@ -217,6 +217,25 @@ nav ul li:hover .dropdown-menu {
 .glitch-text { cursor: pointer; }
 .glitch-text:hover { color: var(--accent-color); }
 
+/* Social Icons */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+    transition: fill 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+    fill: var(--accent-color);
+}
+
 .detail-hero {
     min-height: 60vh;
     display: flex;
