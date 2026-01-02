@@ -46,7 +46,6 @@ export class TextScramble {
                     char = this.randomChar();
                     this.queue[i].char = char;
                 }
-                // 'dud' sınıfı ile renk değişimi sağlanacak
                 output += `<span class="dud">${char}</span>`;
             } else {
                 output += from;
